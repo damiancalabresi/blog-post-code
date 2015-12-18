@@ -1,6 +1,7 @@
 package com.dcalabresi.mail.model;
 
 import com.dcalabresi.utils.MimeType;
+import com.google.common.base.Objects;
 
 import java.io.Serializable;
 
@@ -108,4 +109,18 @@ public class EmailDto implements Serializable {
         this.fileName = fileName;
     }
 
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this)
+                .add("from", from)
+                .add("fromName", fromName)
+                .add("to", to)
+                .add("unsubscribeUrl", unsubscribeUrl)
+                .add("subject", subject)
+                .add("body", body)
+                .add("mimeType", mimeType)
+                .add("fileBase64", fileBase64)
+                .add("fileName", fileName)
+                .toString();
+    }
 }

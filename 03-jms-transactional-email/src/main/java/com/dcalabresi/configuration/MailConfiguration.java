@@ -1,5 +1,6 @@
 package com.dcalabresi.configuration;
 
+import com.dcalabresi.mail.queue.EmailQueuer;
 import com.dcalabresi.mail.send.EmailDequeuer;
 import com.dcalabresi.mail.send.EmailSender;
 import org.slf4j.Logger;
@@ -21,11 +22,16 @@ public class MailConfiguration {
     @Autowired
     EmailDequeuer emailDequeuer;
 
-    @Scheduled(initialDelay = 10000, fixedDelay = 5000)
+    @Scheduled(initialDelay = 10000, fixedDelay = 10000)
     public void startSendEnqueuedEmails() {
         logger.info("Start - sendEnqueuedEmails");
         emailDequeuer.sendEnqueuedEmails();
         logger.info("End   - sendEnqueuedEmails");
+    }
+
+    @Bean
+    public EmailQueuer emailQueuer() {
+        return new EmailQueuer();
     }
 
     @Bean
