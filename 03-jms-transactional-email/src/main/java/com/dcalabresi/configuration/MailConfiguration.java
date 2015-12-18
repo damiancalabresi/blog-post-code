@@ -22,11 +22,9 @@ public class MailConfiguration {
     @Autowired
     EmailDequeuer emailDequeuer;
 
-    @Scheduled(initialDelay = 10000, fixedDelay = 10000)
+    @Scheduled(initialDelay = 10000, fixedDelay = 5000)
     public void startSendEnqueuedEmails() {
-        logger.info("Start - sendEnqueuedEmails");
         emailDequeuer.sendEnqueuedEmails();
-        logger.info("End   - sendEnqueuedEmails");
     }
 
     @Bean
