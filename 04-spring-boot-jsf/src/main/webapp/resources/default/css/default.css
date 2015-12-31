@@ -1,0 +1,11 @@
+.ui-widget, .ui-widget .ui-widget {
+    font-size: 90% !important;
+}
+
+.ui-datatable table {
+    font-size: 100% !important;
+}
+
+.ui-dialog {
+    position:absolute;
+}
