@@ -6,7 +6,7 @@
 	<groupId>com.dcalabresi</groupId>
 	<artifactId>spring-boot-jsf</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>spring-boot-jsf</name>
 	<description>Example of a Java Server Face in a Spring Boot application</description>
@@ -77,6 +77,15 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
 	
 	<build>
 		<plugins>
