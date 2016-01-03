@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestService {
 
 	@Loggable
-	public String test(String valuePublic, @NotLog String valueSecret) {
-		return "Test - Argument received: " + valuePublic;
+	public String test(String user, @NotLog String password) {
+		return "Test - Arguments received - User: " + user + " - Password: " + password;
 	}
 
 }

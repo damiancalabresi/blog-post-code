@@ -14,9 +14,9 @@ public class TestController {
 	@Autowired
 	TestService testService;
 
-	@RequestMapping(value="/{valuePublic}/{valueSecret}", method= RequestMethod.GET)
-	public String test(@PathVariable String valuePublic, @PathVariable String valueSecret) {
-		return testService.test(valuePublic, valueSecret);
+	@RequestMapping(value="/{user}/{password}", method= RequestMethod.GET)
+	public String test(@PathVariable String user, @PathVariable String password) {
+		return testService.test(user, password);
 	}
 
 }
